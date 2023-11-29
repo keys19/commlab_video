@@ -24,21 +24,54 @@
 <div class="header" id="sectionHeader">
     <!-- <button onclick="topFunction()" id="myBtn" title="Go to top"></button> -->
     <div class="text-container">
-        <h1 id="Where is my cookie?">Where is my cookie?</h1>
+        <h1 id="Where is my cookie?">Where <br>is my <br>Cookie?</h1>
     </div>
 </div>
+
 
 <div class="film" id="section1">
     <h1>The Film</h1>
 
-<div id="iframe-container">
-  <iframe id="video-iframe" src="https://drive.google.com/file/d/1M9yO8GK0HfMYZXcjxzxsV1T8h9AOEab6/preview" frameborder="0" allowfullscreen></iframe>
-  <div id="menu-container">
-    <div class="menu-option" onclick="redirectToPage('scene7a.html')">Approach Roommate</div>
-    <div class="menu-option" onclick="redirectToPage('scene7b.html')">Runaway</div>
-  </div>
+    <div id="iframe-container">
+    <iframe id="video-iframe" src="https://drive.google.com/file/d/1o9T5n5O73XB4o6oSs4eBYydUO98ojV-c/preview" frameborder="0" allowfullscreen></iframe>
+    <img id="image-overlay" src="/images/cookie.png" alt="Overlay Image">
+    <div id="menu-container">
+        <div class="menu-option" onclick="redirectToPage('scene7a.html')">Approach Roommate</div>
+        <div class="menu-option" onclick="redirectToPage('scene7b.html')">Runaway</div>
+    </div>
+    </div>
 </div>
+
+<!-- Section for cast -->
+<div class="team-section" id="section4">
+    <!-- <button onclick="topFunction()" id="myBtn" title="Go to top" class="white-button"></button> -->
+    <h1>The Cast</h1>
+    <div class="team-container">
+        <!-- <img id="image-overlay2" src="/images/cookie2.png" alt="Overlay Image"> -->
+        <div class="team-member">
+            <img src="./images/2.png" alt="Team Member 1">
+            <h3>Aysha</h3>
+            <p>Director, Sound Manager</p>
+        </div>
+        <div class="team-member">
+            <img src="./images/3.png" alt="Team Member 2">
+            <h3>Ahmad</h3>
+            <p>Film editor</p>
+        </div>
+        <div class="team-member">
+            <img src="./images/1.png" alt="Team Member 3">
+            <h3>Lemisa</h3>
+            <p>Lead Actor, scriptwriter</p>
+        </div>
+        <div class="team-member">
+            <img src="./images/3.png" alt="Team Member 4">
+            <h3>Keya</h3>
+            <p>Actor, Web Developer</p>
+        </div>
+    </div>
+
 </div>
+
 
 <script>
   const iframe = document.getElementById('video-iframe');
@@ -47,7 +80,7 @@
   // Simulating video end with a setTimeout (replace with real event handling for your video)
   setTimeout(function() {
     showMenu();
-  }, 5000); // Adjust the timeout duration as needed
+  }, 130*1000); // Adjust the timeout duration as needed
 
   function showMenu() {
     menuContainer.style.display = 'flex';
@@ -56,8 +89,41 @@
   function redirectToPage(page) {
     window.location.href = page;
   }
+
+// JavaScript for the BTS Popup
+const btsPopup = document.getElementById('btsPopup');
+const openBtsPopupButton = document.getElementById('openBtsPopup');
+
+function openBtsPopup() {
+    btsPopup.style.display = 'block';
+
+    // Attach event listener for close button
+    document.addEventListener('click', closeBtsPopupHandler);
+}
+
+function closeBtsPopup() {
+    btsPopup.style.display = 'none';
+
+    // Remove event listener for close button
+    document.removeEventListener('click', closeBtsPopupHandler);
+}
+
+// Event handler for close button
+function closeBtsPopupHandler(event) {
+    const closeBtsButton = document.querySelector('.close');
+
+    // Check if the clicked element is the close button or inside the close button
+    if (event.target === closeBtsButton || closeBtsButton.contains(event.target)) {
+        closeBtsPopup();
+    }
+}
+
+// Event listener for the button click
+openBtsPopupButton.addEventListener('click', openBtsPopup);
+
 </script>
 
 
 </body>
 </html>
+
