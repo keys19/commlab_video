@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Approach Roommate</title>
+  <!-- Stylesheet -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="film" id="section1">
+    <h1>The Film</h1>
+
+<div id="iframe-container">
+  <iframe id="video-iframe" src="https://drive.google.com/file/d/1M9yO8GK0HfMYZXcjxzxsV1T8h9AOEab6/preview" frameborder="0" allowfullscreen></iframe>
+  <img id="image-overlay" src="/images/cookie.png" alt="Overlay Image">
+  <div id="menu-container">
+    <div class="menu-option" onclick="redirectToPage('scene12a.html')">Give it to Roommate</div>
+    <div class="menu-option" onclick="redirectToPage('scene12b.html')">Eat it!</div>
+  </div>
+</div>
+  </div>
+
+<script>
+  const iframe = document.getElementById('video-iframe');
+  const menuContainer = document.getElementById('menu-container');
+
+  // Simulating video end with a setTimeout (replace with real event handling for your video)
+  setTimeout(function() {
+    showMenu();
+  }, 5000); // Adjust the timeout duration as needed
+
+  function showMenu() {
+    menuContainer.style.display = 'flex';
+  }
+
+  function redirectToPage(page) {
+    window.location.href = page;
+  }
+</script>
+
+</body>
+</html>
